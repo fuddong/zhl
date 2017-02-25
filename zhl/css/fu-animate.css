@@ -1,0 +1,55 @@
+.scenic-span {
+  width: 100% !important;
+  transition-property: width;
+}
+.scenic-img2 {
+  transform-origin: 50% 50%;
+  transform: rotate(-45deg);
+  left: 19.5px !important;
+  top: -4px !important;
+  transition-property: all;
+}
+.scenic-img02 {
+  transform-origin: 50% 50%;
+  transform: rotate(45deg);
+  left: 19.5px !important;
+  bottom: 6px !important;
+  transition-property: all;
+}
+.modBgRf {
+  width: 100% !important;
+  left: 0 !important;
+  transition-property: all;
+}
+.modIcon1 {
+  top: 10px !important;
+  right: 10px !important;
+  transition: all;
+}
+.detail-cir {
+  opacity: 1 !important;
+  transition: all;
+}
+.modTitBg {
+  bottom: 3px !important;
+  transition-property: all;
+}
+.fa-sCome {
+  top: 99px !important;
+  transition: top;
+}
+.white {
+  color: #fff !important;
+}
+.font-rif {
+  color: #9C1E12 !important;
+  padding-left: 35px !important;
+  transition-property: all;
+}
+.font-9c {
+  color: #9C1E12 !important;
+}
+.more4 {
+  background-image: url(../img/bg/more4.png) !important;
+  transition-property: all;
+}

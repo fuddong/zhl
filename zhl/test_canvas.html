@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .container{
+      margin:10px;
+    }
+    canvas{
+      background-color:#eee;
+    }
+
+  </style>
+</head>
+<body>
+  <button id="stop">stop</button>
+
+
+  <div class="container">
+    <canvas id="c1" width="800" height="600"></canvas>
+
+  </div>
+
+  <script>
+    var ctx=c1.getContext('2d');
+    ctx.save();
+    ctx.moveTo(100,100);
+    ctx.strokeStyle='#f00';
+    ctx.quadraticCurveTo(200,300,300,100);
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
+    ctx.moveTo(300,400);
+    ctx.restore();
+    drawB(ctx,300,400,400,500,450,450,500,500);
+
+    var p0=[],p1=[],p2=[],p3=[];
+     p0.x=300,p0.y=400,p1.x=400,p1.y=500,p2.x=450,p2.y=450,p3.x=500,p3.y=500;
+		ctx.lineWidth=15;
+//		ctx.lineJoin="round";
+		ctx.lineCap="round";
+
+		var t=0;
+    var startx=300,starty=400;
+    var chX=null,chy=null;
+    var timer=setInterval(function(){
+      t+=0.01;
+      if(t>1){t=1};  //t按照加法可能会大于1 造成无法清除
+      ctx.beginPath();
+      ctx.lineWidth+=1;
+      ctx.lineTo(startx,starty);
+      drawC(ctx,calcB(t,p0,p1,p2,p3));
+      startx=calcB(t,p0,p1,p2,p3).x;
+      starty=calcB(t,p0,p1,p2,p3).y;
+
+//      console.log(calcB(t,p0,p1,p2,p3).x);
+//      console.log(calcB(t,p0,p1,p2,p3).y);
+//      console.log(p3.x);
+//      console.log(p3.y);
+      if(calcB(t,p0,p1,p2,p3).x==p3.x&&calcB(t,p0,p1,p2,p3).y==p3.y){
+        clearInterval(timer);
+      }
+    },20);
+
+    var $stop=document.getElementById("stop");
+    $stop.onclick= function () {
+      console.log("xx");
+      if(timer!=null){
+        clearInterval(timer);
+        console.log(startx+" "+starty);
+      }
+    }
+
+//    var tempc=null;
+//    var startx=300,starty=400;
+//    var dir=0;
+//    for(var t=0;true;t+=0.01){
+//      if(t>1) t=1;
+//      tempc=calcB(t,p0,p1,p2,p3);
+//      ctx.moveTo(startx,starty);
+//      ctx.beginPath();
+//      if(dir==0||ctx.lineWidth<=2){
+//        ctx.lineWidth+=1;
+//        dir=0;
+//      }
+//
+//      if(ctx.lineWidth>6||dir==1){
+//        ctx.lineWidth-=1;
+//        dir=1;
+//        console.log(dir);
+//      }
+//      drawC(ctx,calcB(t,p0,p1,p2,p3));
+//      //      console.log(tempc.x+" "+tempc.y);
+//      if(tempc.x==p3.x&&tempc.y==p3.y){
+//        break;
+//      }
+//      startx=tempc.x;
+//      starty=tempc.y;
+//
+//    }
+
+
+
+    //测试控制点 画贝塞尔 按lineTo绘制
+    function drawC(ctx,p){
+      ctx.save();
+      //ctx.arc(p.x, p.y,1,0,2*Math.PI);
+			ctx.lineTo(p.x,p.y);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    //绘制白塞尔的 参数：画笔，四个点
+    function drawB(ctx,p0,p1,p2,p3){
+      ctx.save();
+      ctx.moveTo(p0.x,p0.y);
+      ctx.bezierCurveTo(p1.x,p1.y,p2.x,p2.y,p3.x,p3.y);
+      ctx.stroke();
+      ctx.restore();
+    };
+
+    //有根据t的取值计算贝塞尔线上的坐标
+    function calcB(t,p0,p1,p2,p3){
+      var b03=[];
+      b03.x=p0.x+3*(-p0.x+p1.x)*t+3*(p0.x-2*p1.x+p2.x)*t*t+(-p0.x+3*p1.x-3*p2.x+p3.x)*t*t*t;
+      b03.y=p0.y+3*(-p0.y+p1.y)*t+3*(p0.y-2*p1.y+p2.y)*t*t+(-p0.y+3*p1.y-3*p2.y+p3.y)*t*t*t;
+
+      return b03;
+
+    }
+
+    function Point(x,y){
+      this.x=x;
+      this.y=y;
+    }
+
+
+
+  </script>
+</body>
+</html>

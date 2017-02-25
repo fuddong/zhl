@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.ttf"),url("../fonts/fontawesome-webfont.woff"),url("../fonts/fontawesome-webfont.eot");
+}
+.fa {
+  font-family: 'FontAwesome';
+}
+.fa-heart:before {
+  content: '\f004';
+}
+.fa-rand:before {
+  content: '\f074';
+}

@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#top {
+  width: 1350px;
+  height: 260px;
+}
+#top img {
+  width: 1350px;
+  height: 260px;
+}
+#introduce {
+  width: 1350px;
+  padding: 25px 133px 0 212px;
+  min-height: 800px;
+  background-color: #eceef1;
+}
+#introduce p {
+  color: #333;
+}
+#introduce ul.bar {
+  width: 1005px;
+  height: 60px;
+  background-color: #fff;
+  font-size: 18px;
+}
+#introduce ul.bar > li {
+  float: left;
+  height: 60px;
+  padding: 15px;
+  line-height: 30px;
+  color: #717171;
+}
+#introduce ul.bar li.active {
+  background-color: #9c1e12;
+  color: #fff;
+}
+#introduce ul.bar > li + li {
+  border-right: 1px solid #eceef1;
+}
+#introduce #simple > div:first-child,
+#introduce #simple div:first-child + div {
+  margin-top: 43px;
+}
+#introduce #simple > div:first-child > h3,
+#introduce #simple div:first-child + div > h3 {
+  color: #e53333;
+  margin-bottom: 34px;
+  text-indent: 2em;
+}
+#introduce #simple > div:first-child > div > p,
+#introduce #simple div:first-child + div > div > p {
+  text-indent: 2em;
+  margin-bottom: 10px;
+  line-height: 26px;
+  font-family: 'Microsoft YaHei';
+}
+#introduce #simple > div:first-child span,
+#introduce #simple div:first-child + div span {
+  font-weight: bold;
+}
+#introduce #simple #culture > div > p {
+  line-height: 20px;
+}
+#introduce #way {
+  height: 627px;
+  margin-top: 83px;
+}
+#introduce #way > div > h3 {
+  color: #e53333;
+  margin-bottom: 34px;
+  text-indent: 2em;
+}

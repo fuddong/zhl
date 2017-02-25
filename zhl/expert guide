@@ -1,0 +1,158 @@
+ <section id="indusN">
+   <section class="left">
+     <div>
+       <p>expert guidance</p>
+       <p><span class="expt">专家</span><span class="guid">指导</span>
+         <a href="#">查看更多 <span></span></a>
+       </p>
+     </div>
+     <ul>
+       <li><p>景区开发和设计应把握的基本原则 <br/> <span>2016-09-13</span></p></li>
+       <li><p>旅游景区总体规划 <br/> <span>2016-12-13</span></p></li>
+       <li><p>企业投资景区需要注意的六大问题 <br/> <span>2016-08-23</span></p></li>
+       <li><p>旅游景区投资的类别及特点 <br/> <span>2016-08-27</span></p></li>
+     </ul>
+   </section>
+   <section class="right">
+     <div>
+       <p>Marketing Planning </p>
+       <p><span class="expt">营销策划</span><span class="guid">查看更多</span>
+         <a href="#">查看更多 <span></span></a>
+       </p>
+     </div>
+     <dl>
+       <dt><img src="img/yx.png" alt=""/></dt>
+       <dd style="color:#000">
+         <p> 石燕湖生态旅游荣获搜过搜索最...</p>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi commodi eligendi illo laborum reprehenderit repudiandae vero voluptate. Ab a</p>
+          <span>查看详情</span>
+       </dd>
+     </dl>
+     <dl>
+       <dt><img src="img/yx.png" alt=""/></dt>
+       <dd style="color:#000">
+         <p> 石燕湖生态旅游荣获搜过搜索最...</p>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi commodi eligendi illo laborum reprehenderit repudiandae vero voluptate. Ab a</p>
+         <span>查看详情</span>
+       </dd>
+     </dl>
+     <dl>
+       <dt><img src="img/yx.png" alt=""/></dt>
+       <dd style="color:#000">
+         <p> 石燕湖生态旅游荣获搜过搜索最...</p>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi commodi eligendi illo laborum reprehenderit repudiandae vero voluptate. Ab a</p>
+         <span>查看详情</span>
+       </dd>
+     </dl>
+   </section>
+
+ </section>
+
+
+
+//////////////////////////////////////////
+#indusN{
+  //border: 1px solid #000000;
+  height:500px;
+  width:@cont-width;
+  padding-left: 75px;
+  padding-right: 70px;
+  padding-top:45px;
+  >section.left,section.right{
+    width:400px;
+    height:400px;
+    >div>p:first-child{
+      color:#d1d0d0;
+      font-size:23px;
+    }
+    >div>p:last-child{
+      >span.expt{
+        color:#000;
+        font-size:20px;
+        font-weight: bold;
+      }
+      >span.guid{
+        color:@text-zRed;
+        font-size:20px;
+        font-weight: bold;
+      }
+      >a{
+        display:inline-block;
+        padding-left:10px;
+        color:@text-color;
+        font-size:15px;
+        position: relative;
+        >span{
+          display: inline-block;
+          width:17px;
+          height:17px;
+          background-image:url('../img/bg/more8.png');
+          position: absolute;
+          right: -22px;
+          top: 0px;
+        }
+      }
+    }
+    >ul{
+      color:@text-info;
+      line-height: 20px;
+      border-top:1px solid @border-info;
+      margin-top:10px;
+      >li{
+        height:78px;
+        border-bottom:1px dashed @border-info;
+        padding-top:25px;
+        padding-left:80px;
+        background:url('../img/bg/icon10.jpg') 0px 24px no-repeat;
+        >p{
+          padding-left:40px;
+          border-left: 1px solid @border-info;
+        }
+      }
+    }
+  }
+  >section.right{
+    width:780px;
+    height:400px;
+
+    >dl{
+      height:290px;
+      float:left;
+      width:floor((780px-20px)/3);
+      background-color:@bg-info;
+      margin-top:20px;
+      padding:5px;
+      cursor:pointer;
+      img{
+        width:floor((780px-20px)/3-10px);
+        height:152PX;
+      }
+      >dd{
+        position: relative;
+        >p:first-child{
+          font-weight: bold;
+          font-size:13px;
+          color:#686767;
+        }
+        >p+p{
+          text-indent: 2em;
+          color:#989897;
+        }
+        >span{
+          position:absolute;
+          bottom:-48px;
+          left:78px;
+          width:97px;
+          height:27px;
+          background-color:#898989;
+          color:#f7ffff;
+          padding-left:12px;
+          line-height:27px;
+        }
+      }
+    }
+    >dl+dl{
+      margin-left:10px;
+    }
+  }
+}
